@@ -1,14 +1,8 @@
 <?php
 
-/*
+/**
  * This file is part of Laravel Commentable.
- *
- * (c) Brian Faust <hello@basecode.sh>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
-
 return [
 
     /*
@@ -20,5 +14,16 @@ return [
     |
     */
     'model' => \AmrNRD\Commentable\Models\Comment::class,
-    'user' => \App\Domains\User\Entities\User::class
+    'user' => \App\Domains\User\Entities\User::class,
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Allow UUID
+    |--------------------------------------------------------------------------
+    |
+    | This option change the id to UUID
+    |
+    */
+    'allow_uuid' => false,
 ];

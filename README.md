@@ -6,7 +6,7 @@
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require amrnrd/commentable
+$ composer require AmrNRD/commentable
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:

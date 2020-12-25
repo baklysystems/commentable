@@ -1,21 +1,16 @@
 <?php
 
-declare(strict_types=1);
-
-/*
- * This file is part of Laravel Commentable.
- *
- */
-
 namespace AmrNRD\Commentable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Kalnoy\Nestedset\NodeTrait;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use AmrNRD\Commentable\Traits\UsesUuid;
 
 class Comment extends Model
 {
-    use NodeTrait;
+    use NodeTrait, UsesUuid;
 
     /**
      * The attributes that are not mass assignable.
@@ -76,7 +71,7 @@ class Comment extends Model
      */
     public function updateComment(int $id, array $data): bool
     {
-        return (bool) static::find($id)->update($data);
+        return (bool) static::findOrFail($id)->update($data);
     }
 
     /**
@@ -88,6 +83,6 @@ class Comment extends Model
      */
     public function deleteComment(int $id): bool
     {
-        return (bool) static::find($id)->delete();
+        return (bool) static::findOrFail($id)->delete();
     }
 }
