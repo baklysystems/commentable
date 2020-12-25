@@ -1,0 +1,49 @@
+{
+    "name": "amrnrd/commentable",
+    "description": "Commentable Polymorphic Eloquent Models for for Laravel 7",
+    "keywords": [
+        "laravel",
+        "framework",
+        "Laravel-Commentable",
+        "Laravel Commentable"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amr Mohamed",
+            "email": "amrnrd27@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "kalnoy/nestedset": "^5.0"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "^5.0",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "AmrNRD\\Commentable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AmrNRD\\Tests\\Commentable\\": "tests"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AmrNRD\\Commentable\\CommentableServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
