@@ -14,7 +14,7 @@ trait UsesUuid
      */
     public function getIncrementing()
     {
-        if(config('cf.allow_uuid')){
+        if(config('commentable.allow_uuid')){
             return false;
         }
 
@@ -28,7 +28,7 @@ trait UsesUuid
      */
     public function getKeyType()
     {
-        if(config('cf.allow_uuid')){
+        if(config('commentable.allow_uuid')){
             return 'string';
         }
         return 'int';
@@ -42,7 +42,7 @@ trait UsesUuid
     protected static function bootUsesUuid()
     {
         static::creating(function ($model) {
-            if (!$model->getKey() && config('cf.allow_uuid')) {
+            if (!$model->getKey() && config('commentable.allow_uuid')) {
                 $model->{$model->getKeyName()} = (string) Str::uuid();
             }
         });
